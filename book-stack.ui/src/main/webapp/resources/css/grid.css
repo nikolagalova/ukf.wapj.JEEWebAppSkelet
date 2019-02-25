@@ -1,0 +1,45 @@
+@CHARSET "UTF-8";
+
+/* This file is for all CSS styles of grids */
+
+.user-panel {
+	padding: 10px;
+	background-color: #3eaac1;
+	border-radius: 5px;
+	color: white;
+	width: 210px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+}
+
+.ui-shadow.ui-sticky {
+	box-shadow: none;
+}
+
+.login-grid label{
+	color: white;
+}
+
+.full-width-grid {
+	width: 100%;
+	border: hidden;
+	padding: 0px;
+}
+
+.full-width-grid .ui-panelgrid-cell {
+	padding: 0px;
+}
+
+.full-width-grid tr.ui-panelgrid-cell {
+	width: 100%;
+}
+.full-width-grid td.ui-panelgrid-cell {
+	width: 100%;
+	padding: 0%
+}
+
+.full-width-grid button {
+	width: 100%
+}
+.full-width-grid input {
+	width: 97%;
+}

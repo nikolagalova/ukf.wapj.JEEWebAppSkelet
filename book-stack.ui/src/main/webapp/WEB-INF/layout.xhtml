@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+      
+   		<!-- f:loadBundle basename="resources" var="msg" /-->
+		<h:head>
+		<title><ui:insert name="pageTitle">UniStats</ui:insert></title>
+		<link rel="stylesheet" href="#{request.contextPath}/resources/css/font-awesome/css/font-awesome.min.css"/>
+		<link rel="stylesheet" href="#{request.contextPath}/resources/css/font-awesome/css/font-awesome.css"/>
+		<!--[if IE 7]>
+		  <link rel="stylesheet" href="#{request.contextPath}/resources/css/font-awesome/css/font-awesome-ie7.min.css">
+		<![endif]-->
+		<h:outputStylesheet library="css" name="main.css" />
+		<h:outputStylesheet library="css" name="grid.css" />
+		</h:head>
+
+<h:body styleClass="wrapper">
+<div>
+			<ui:include src="/header.xhtml" />
+		</div>
+	<div class="ui-grid ui-grid-responsive">
+		
+		<br />
+		<div class="ui-grid-row">
+			<div class="ui-grid-col-2" >
+			
+			<h:panelGroup id="leftMenu">
+				<h:panelGroup id="menubar" rendered="#{sessionBean.isUserLoggedIn()}">
+					<ui:include src="/userPanel.xhtml" />
+				</h:panelGroup>
+					
+				<h:form id="MenuForm">
+				<p:menu id="mainMenu" styleClass="main-menu">
+					<p:submenu label="Verejné prehľady">
+						<p:menuitem value="Prehľad publikácií katedier" action="home.xhtml?faces-redirect=true"></p:menuitem>
+					</p:submenu>
+					<p:submenu label="Moje publikácie" rendered="#{sessionBean.isUserLoggedIn()}">
+						<p:menuitem value="Štatistiky"
+						action="publications.xhtml?faces-redirect=true"></p:menuitem>
+						<p:menuitem value="Zoznam" 
+						action="pubList.xhtml?faces-redirect=true"> </p:menuitem>
+					</p:submenu>
+					<p:submenu label="Moja katedra" rendered="#{sessionBean.headOfDepartment}">
+						<p:menuitem value="Zamestnanci"
+						action="employees.xhtml?faces-redirect=true"></p:menuitem>
+					</p:submenu>
+				</p:menu>
+				<a href="http://www.ukf.sk" ><img src="resources/img/bannerUKF.png" height="100" width="230"/>
+				</a>
+				</h:form>
+			</h:panelGroup>
+			<p:sticky target="leftMenu"></p:sticky>
+				
+			</div>
+			<div class="ui-grid-col-9" style="margin-left: 45px">
+				
+				<!-- Search input in future -->
+				<!-- Dock component in future -->
+				<div class="content">
+				<ui:insert name="content">No content available.</ui:insert>
+				</div>
+			</div>
+		</div>
+	</div>
+</h:body>
+		
+</html>

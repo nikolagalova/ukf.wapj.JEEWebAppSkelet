@@ -1,0 +1,57 @@
+@CHARSET "UTF-8";
+td.jqplot-seriesToggle:hover, td.jqplot-seriesToggle:active {
+    cursor: pointer;
+}
+body.wrapper {
+	/*background-color: #bcf3e4;*/
+	background-color: #cfcfcf;
+	/*background-image: url('resources/img/back.jpg');*/
+}
+
+.no-publication-section {
+	padding: 20px;
+	text-align: center;
+	border: 10px solid #ffd399;
+	border-radius: 5px;
+}
+
+.no-publication-section i {
+	color: #ff9300;
+}
+
+.breadCrumb a {
+	vertical-align: 5px;
+}
+
+.breadCrumb .fa-angle-right {
+	margin: 5px;
+}
+
+.sectionHeading {
+	font-size: x-large !important;
+	font-weight: bold;
+	color: #5b2e00;
+}
+
+.content {
+	/*background-color: #fef0c5;*/
+	background-color: white;
+	border-radius: 5px;
+	padding: 20px;
+}
+.main-menu {
+    background: #c4c4c4 -moz-linear-gradient(center top , rgba(254, 240, 197, 0.8), rgba(188, 243, 228, 0)) repeat scroll 0 0 !important;
+/*	background: #25242d-moz-linear-gradient(center top , rgba(150, 255, 255, 0.8), rgba(100, 150, 255, 0)) repeat scroll 0 0 !important;*/
+}
+
+.menu-item-scalable:hover { 
+	transform: scale(1.5); 
+}
+
+.center-table-cell {
+	text-align: center;
+}
+
+.green-icon {
+	color: #00b700;
+}

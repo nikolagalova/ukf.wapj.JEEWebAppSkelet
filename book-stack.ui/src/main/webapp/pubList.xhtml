@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+	<!-- 
+		Replace path to template, title, header and body
+		with actual data.
+	 -->
+<ui:composition template="WEB-INF/layout.xhtml">
+	<ui:define name="pageTitle">UniStats - My</ui:define>
+	<ui:define name="content">
+		<f:event listener="#{sessionBean.checkUser()}" type="preRenderView"></f:event>
+		<h:form id="pubListForm">	
+			<p:outputLabel value="Zoznam všetkých mojich publikácií" styleClass="sectionHeading"/>
+			
+			<p:dataTable value="#{publicationListBean.allUserPublications}" var="pub"
+			emptyMessage="Nemáte evidované žiadne publikácie."
+			reflow="true">
+				<p:column headerText="Názov">#{pub.nazovHlavny}</p:column>
+				<p:column headerText="Rok vydania" width="15%">#{pub.rokVydania}</p:column>
+				<p:column headerText="Autori">#{pub.zoznamAutorov}</p:column>
+				<p:column headerText="WoS" width="10%" styleClass="center-table-cell">
+					<i class="#{publicationListBean.getBooleanIcon(pub.woS)}" style="text-align: center"></i>
+				</p:column>
+				<p:column headerText="Scopus" width="10%" styleClass="center-table-cell">
+					<i class="#{publicationListBean.getBooleanIcon(pub.scopus)}"></i>
+				</p:column>
+			</p:dataTable>
+		</h:form>
+	</ui:define>
+</ui:composition>
+
+</html>

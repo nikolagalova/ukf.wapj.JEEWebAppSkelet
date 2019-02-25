@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+  <table-filter match-catalog="unistatsdb" match-name="zoznam_osob_ldap"/>
+  <table-filter match-catalog="unistatsdb" match-name="pub_autori"/>
+  <table-filter match-catalog="unistatsdb" match-name="pub_casopisy"/>
+  <table-filter match-catalog="unistatsdb" match-name="pub_epc_kody"/>
+  <table-filter match-catalog="unistatsdb" match-name="pub_epc_kody_ukazovatele"/>
+  <table-filter match-catalog="unistatsdb" match-name="pub_epc_skupiny"/>
+  <table-filter match-catalog="unistatsdb" match-name="pub_publikacie"/>
+</hibernate-reverse-engineering>

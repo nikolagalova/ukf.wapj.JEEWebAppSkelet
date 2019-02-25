@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<h:head>
+		<h:outputStylesheet library="css" name="grid.css" /></h:head> 
+<body> 
+	<h:panelGroup>
+	<div class="user-panel">
+		<h:form id="userPanelForm">
+		<p:panelGrid id="userPanel" columns="2" styleClass="ui-panelgrid-blank login-grid">
+			<p:graphicImage library="img" name="userIcon.png" alt="Ikona používateľa"></p:graphicImage>
+			<h:panelGroup>
+				<p:outputLabel value="#{sessionBean.person.plneMeno}" />
+				<br />
+				<p:outputLabel value="#{sessionBean.person.kzamPopis}" />
+				<br />
+				
+			</h:panelGroup>
+		</p:panelGrid>
+		<!-- p:sticky target="userPanel"></p:sticky-->
+	</h:form>
+	</div>
+	</h:panelGroup>
+	</body> 
+</html>

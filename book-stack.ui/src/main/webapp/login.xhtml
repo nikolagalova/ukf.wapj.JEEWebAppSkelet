@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+<body>
+<div >
+		<h:form id="loginForm">
+			<h:outputLink value="javascript:void(0)" onclick="PF('dlg').show();"
+				title="login">
+				<p:commandButton value="Prihlásiť"/>
+			</h:outputLink>
+
+			<p:growl id="growl" sticky="true" showDetail="true" life="3000" />
+			<p:dialog header="Prihlásenie" widgetVar="dlg" resizable="false">
+			<p:messages id="loginMessages" for="loginMessages"
+						autoUpdate="true" showDetail="true" showSummary="true"></p:messages>
+						<p:message id="inputNumberMessage" for="inputUserName" />
+				<p:panelGrid columns="2" cellpadding="5">
+				
+					
+
+					<h:outputLabel for="inputUserName" value="Username:" />
+					<p:inputText id="inputUserName"
+						value="#{loginBean.inputUserNumber}" required="true"
+						requiredMessage="Zadajte Vaše prihlasovacie číslo prosím."
+						converterMessage="Nesprávny vstup!" />
+
+					<h:outputLabel for="inputPassword" value="Password:" />
+					<p:password id="inputPassword" disabled="true"
+						placeholder="Nedostupné" style="font-weight:bold" />
+
+					<p:commandButton id="loginButton" action="#{loginBean.loginUser()}"
+						update="loginMessages inputNumberMessage" value="Prihlásiť"
+						icon="ui-icon-check" />
+
+				</p:panelGrid>
+			</p:dialog>
+
+		</h:form>
+
+
+
+
+
+	</div>
+</body>
+</html>
