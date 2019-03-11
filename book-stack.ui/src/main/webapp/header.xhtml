@@ -7,31 +7,8 @@
 
 <h:head></h:head>
 <body>
-	<div style=" width: 100%">
-		
-		<div style="width: 100%; float: left" align="center">
-			<p:graphicImage library="img" name="unistats_logo.png"></p:graphicImage>
-	
-	
-	
-	
-	<div style=" float: right;"
-			align="right">
-			
-			<h:panelGroup rendered="#{!sessionBean.userLoggedIn}">
-				<ui:include src="/login.xhtml" />
-			</h:panelGroup>
-			
-			
-			<h:panelGroup rendered="#{sessionBean.isUserLoggedIn()}">
-					<ui:include src="/logoff.xhtml" />
-				</h:panelGroup>
-				
-		</div>
-					</div>
-
-
-		
+	<div style="width: 100%; float: left" align="center">
+		<div style="float: right;" align="right">Header section..</div>
 	</div>
 </body>
 </html>
