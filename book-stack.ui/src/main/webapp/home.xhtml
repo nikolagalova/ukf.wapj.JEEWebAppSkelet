@@ -7,12 +7,14 @@
 
 <ui:composition template="/WEB-INF/layout.xhtml">
 	<ui:define name="content">
-		<h:form>
+		<h:form id="bookForm">
 			<p:outputLabel styleClass="sectionHeading" value="Zoznam mojich knih" />
 			<h:panelGroup style="float:right; margin-bottom:20px">
+			<p:commandButton value="Create Random Book" style="margin:10px;" update="@form" actionListener="#{booksController.createBook}"/>
 				<p:dataTable value="#{booksView.bookList}" var="book">
 					<p:column headerText="Title">#{book.title}</p:column>
-					<p:column headerText="Autor">#{book.autor}</p:column>
+					<p:column headerText="Title">#{book.isbn}</p:column>
+					<p:column headerText="Autor">#{book.autor.fullName}</p:column>
 				</p:dataTable>
 			</h:panelGroup>
 			<br />

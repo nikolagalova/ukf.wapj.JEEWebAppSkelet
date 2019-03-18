@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -25,7 +26,13 @@ public class BooksView implements Serializable {
 	
 	@PostConstruct
 	private void init() {
+		System.out.println(this.getClass().getName() + " created.");
 		bookList = bookService.getAllBooks();
+	}
+	
+	@PreDestroy
+	private void destroy(){
+		System.out.println(this.getClass().getName() + " was destroyed.");
 	}
 
 	public List<Book> getBookList() {
