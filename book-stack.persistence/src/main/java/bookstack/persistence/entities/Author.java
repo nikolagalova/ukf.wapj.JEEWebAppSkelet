@@ -21,7 +21,8 @@ import javax.persistence.UniqueConstraint;
 @Table(uniqueConstraints = @UniqueConstraint(columnNames = { "name", "surname" }))
 @Entity
 @NamedQueries({
-		@NamedQuery(name = "findBooksByNames", query = "SELECT a FROM Author a WHERE a.name LIKE :name AND a.surname LIKE :surname") })
+		@NamedQuery(name = "findBooksByNames", query = "SELECT a FROM Author a WHERE "
+				+ "a.name LIKE :name AND a.surname LIKE :surname") })
 public class Author {
 
 	@Id

@@ -18,7 +18,7 @@ import bookstack.persistence.entities.Book;
 
 //anotacia, ktorou vieme jednoznacne identifikovat nazov beany v kontajneri ak je
 //pouzita bez parametra : @Named pouzije sa ako identifikator nazov beany (bookController)
-@Named(value="booksController")
+@Named
 // Request Scope - Bean sa vytvori pri kazdom HTTP requeste a zanikne hned po ukonceni
 @RequestScoped
 public class BookController implements Serializable{

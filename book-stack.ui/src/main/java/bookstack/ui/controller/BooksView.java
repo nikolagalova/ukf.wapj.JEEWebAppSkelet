@@ -19,6 +19,7 @@ public class BooksView implements Serializable {
 
 	private static final long serialVersionUID = 6559129950166292602L;
 	
+	private String input;
 	private List<Book> bookList;
 	
 	@Inject
@@ -28,6 +29,7 @@ public class BooksView implements Serializable {
 	private void init() {
 		System.out.println(this.getClass().getName() + " created.");
 		bookList = bookService.getAllBooks();
+		input = "init hodnota";
 	}
 	
 	@PreDestroy
@@ -41,6 +43,14 @@ public class BooksView implements Serializable {
 
 	public void setBookList(List<Book> bookList) {
 		this.bookList = bookList;
+	}
+
+	public String getInput() {
+		return input;
+	}
+
+	public void setInput(String input) {
+		this.input = input;
 	}
 	
 
