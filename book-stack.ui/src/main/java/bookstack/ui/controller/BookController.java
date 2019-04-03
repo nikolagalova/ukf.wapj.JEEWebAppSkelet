@@ -40,6 +40,9 @@ public class BookController implements Serializable{
 	@Inject 
 	private BooksView booksView;
 	
+	@Inject
+	private AuthorService authorService;
+	
 	@Inject 
 	private BookSessionStatistics bookSessionStatistics;
 	
@@ -103,6 +106,11 @@ public class BookController implements Serializable{
 		//refresh data na UI
 		booksView.setBookList(bookService.getAllBooks());
 		bookSessionStatistics.triggerRandomBookCreationStatistics();
+	}
+	
+	public void createAuthor() {
+		Author author = authorService.createAuthor(booksView.getAuthor());
+		System.out.println(author);
 	}
 
 }

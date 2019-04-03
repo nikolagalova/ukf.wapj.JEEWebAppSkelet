@@ -11,15 +11,17 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import bookstack.business.BookService;
+import bookstack.persistence.entities.Author;
 import bookstack.persistence.entities.Book;
 
 @ViewScoped
 @Named
 public class BooksView implements Serializable {
-
+	
 	private static final long serialVersionUID = 6559129950166292602L;
 	
 	private String input;
+	private Author author;
 	private List<Book> bookList;
 	
 	@Inject
@@ -30,6 +32,7 @@ public class BooksView implements Serializable {
 		System.out.println(this.getClass().getName() + " created.");
 		bookList = bookService.getAllBooks();
 		input = "init hodnota";
+		author = new Author();
 	}
 	
 	@PreDestroy
@@ -52,6 +55,14 @@ public class BooksView implements Serializable {
 	public void setInput(String input) {
 		this.input = input;
 	}
+	public Author getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(Author author) {
+		this.author = author;
+	}
+
 	
 
 }

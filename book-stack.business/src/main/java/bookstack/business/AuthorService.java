@@ -15,4 +15,8 @@ public class AuthorService {
 	public Author findAuthorByName(String name,String surname){
 		return this.authorDAO.getAuthorByName(name, surname);
 	}
+	
+	public Author createAuthor(Author author) {
+		return this.authorDAO.create(author);
+	}
 }
