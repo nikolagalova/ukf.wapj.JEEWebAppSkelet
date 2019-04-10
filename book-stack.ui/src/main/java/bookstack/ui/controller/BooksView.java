@@ -2,6 +2,7 @@ package bookstack.ui.controller;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -23,6 +24,7 @@ public class BooksView implements Serializable {
 	private String input;
 	private Author author;
 	private List<Book> bookList;
+	private Currency selectedCurrency;
 	
 	@Inject
 	private BookService bookService;
@@ -38,6 +40,14 @@ public class BooksView implements Serializable {
 	@PreDestroy
 	private void destroy(){
 		System.out.println(this.getClass().getName() + " was destroyed.");
+	}
+	
+	public List<Currency> getCurrencies() {
+		return Arrays.asList(Currency.values());
+	}
+	
+	public void processCurrency() {
+		System.out.println("processing currency");
 	}
 
 	public List<Book> getBookList() {
@@ -61,6 +71,18 @@ public class BooksView implements Serializable {
 
 	public void setAuthor(Author author) {
 		this.author = author;
+	}
+
+	public Currency getSelectedCurrency() {
+		return selectedCurrency;
+	}
+	
+	public String getCurrencyLabel(Currency currency) {
+		return currency.name().toLowerCase()+" "+currency.getExchange();
+	}
+
+	public void setSelectedCurrency(Currency selectedCurrency) {
+		this.selectedCurrency = selectedCurrency;
 	}
 
 	

@@ -9,8 +9,18 @@
 	<ui:define name="content">
 		<h:form id="bookForm">
 		<p:message for="nameId" ></p:message>
+		<p:messages id="messages"></p:messages>
 			<p:outputLabel styleClass="sectionHeading" value="Zoznam mojich knih" />
 			<h:panelGroup style="float:right; margin-bottom:20px">
+			<p:selectOneMenu id="selectCurrencyId" value="#{booksView.selectedCurrency}">
+				<f:selectItems value="#{booksView.currencies}"
+				var="currency" itemValue="#{currency}" 
+				itemLabel="#{booksView.getCurrencyLabel(currency)}"></f:selectItems>
+			</p:selectOneMenu>
+			<p:commandButton value="submit currency"  process="selectCurrencyId @this"
+			actionListener="#{booksView.processCurrency()}"
+			update="selectCurrencyId messages" ></p:commandButton>
+			<br />
 			<p:outputLabel for="nameId">Name:</p:outputLabel>
 			<h:inputText id="nameId" value="#{booksView.author.name}" required="true" requiredMessage="Name is required"></h:inputText>
 			<h:inputText value="#{booksView.author.surname}"></h:inputText>
