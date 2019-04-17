@@ -14,13 +14,13 @@
 		</facelets-processing>
 	</faces-config-extension>
 	<application>
-		<!-- locale-config>
-			<default-locale>de</default-locale>
+		<locale-config>
+			<default-locale>en</default-locale>
 			<supported-locale>sk</supported-locale>
 		</locale-config>
         <resource-bundle>
-            <base-name>projectSI.ui.resources.lang</base-name>
+            <base-name>lang</base-name>
             <var>lang</var>
-		</resource-bundle-->
+		</resource-bundle>
 	</application>
 </faces-config>
