@@ -5,14 +5,12 @@ import java.util.concurrent.ThreadLocalRandom;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
-import javax.ejb.Stateless;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
 import bookstack.business.AuthorService;
 import bookstack.business.BookService;
-import bookstack.persistence.dao.BookDAO;
 import bookstack.persistence.entities.Author;
 import bookstack.persistence.entities.Book;
 
